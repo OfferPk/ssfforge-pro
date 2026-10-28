@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600" width="1000" height="600">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090d16" />
+      <stop offset="100%" stop-color="#111827" />
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#182335" />
+      <stop offset="100%" stop-color="#101826" />
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <rect width="1000" height="600" fill="url(#bgGrad)" />
+
+  <!-- Grid lines -->
+  <g stroke="#1e293b" stroke-width="1" opacity="0.3">
+    <line x1="0" y1="100" x2="1000" y2="100" />
+    <line x1="0" y1="200" x2="1000" y2="200" />
+    <line x1="0" y1="300" x2="1000" y2="300" />
+    <line x1="0" y1="400" x2="1000" y2="400" />
+    <line x1="0" y1="500" x2="1000" y2="500" />
+    <line x1="200" y1="0" x2="200" y2="600" />
+    <line x1="400" y1="0" x2="400" y2="600" />
+    <line x1="600" y1="0" x2="600" y2="600" />
+    <line x1="800" y1="0" x2="800" y2="600" />
+  </g>
+
+  <!-- Title & Header -->
+  <text x="50" y="55" fill="#f8fafc" font-family="-apple-system, sans-serif" font-size="22" font-weight="bold">SSFForge Pro: CCSDS 902.1-B-1 Architecture</text>
+  <text x="50" y="80" fill="#94a3b8" font-family="-apple-system, sans-serif" font-size="13">Cross Support Service Management (CSS-SM) — Simple Schedule Format Information Architecture</text>
+
+  <!-- Top Layer: Mission Control & Planning -->
+  <g filter="url(#shadow)">
+    <rect x="50" y="110" width="900" height="75" rx="8" fill="url(#cardGrad)" stroke="#f59e0b" stroke-width="1.5" />
+    <text x="70" y="140" fill="#fbbf24" font-family="-apple-system, sans-serif" font-size="14" font-weight="bold">CUSTOMER MISSION OPERATIONS CENTER (MOC / MCC)</text>
+    <text x="70" y="165" fill="#cbd5e1" font-family="-apple-system, sans-serif" font-size="12">Tactical Mission Planners • Flight Dynamics Orbit Propagator • Ground Pass Request Initiator</text>
+  </g>
+
+  <!-- Arrows -->
+  <g stroke="#f59e0b" stroke-width="2" stroke-dasharray="4,4" fill="none">
+    <line x1="500" y1="185" x2="500" y2="225" />
+  </g>
+
+  <!-- Middle Layer: Simple Schedule Information Entity -->
+  <g filter="url(#shadow)">
+    <rect x="50" y="225" width="900" height="115" rx="8" fill="url(#cardGrad)" stroke="#38bdf8" stroke-width="1.5" />
+    <text x="70" y="255" fill="#38bdf8" font-family="-apple-system, sans-serif" font-size="14" font-weight="bold">CCSDS 902.1-B-1 SIMPLE SCHEDULE INFORMATION ENTITY</text>
+    <text x="70" y="280" fill="#cbd5e1" font-family="-apple-system, sans-serif" font-size="12">
+      • Schedule Header: Schedule ID, Provider CSSS (NASA DSN / ESA ESTRACK), Customer Mission, Validity Period
+    </text>
+    <text x="70" y="305" fill="#cbd5e1" font-family="-apple-system, sans-serif" font-size="12">
+      • Service Packages: Unique Pass ID, Bound Ground Aperture (DSS-14, DSS-43, Cebreros), Start/Stop ISO 8601 UTC
+    </text>
+    <text x="70" y="325" fill="#94a3b8" font-family="-apple-system, sans-serif" font-size="11">
+      • Activities: Forward Link (Command Uplink), Return Link (Telemetry Downlink), Radiometric Doppler Ranging
+    </text>
+  </g>
+
+  <!-- Arrows -->
+  <g stroke="#38bdf8" stroke-width="2" stroke-dasharray="4,4" fill="none">
+    <line x1="500" y1="340" x2="500" y2="380" />
+  </g>
+
+  <!-- Lower Middle: Deconfliction & Rules Engine -->
+  <g filter="url(#shadow)">
+    <rect x="50" y="380" width="900" height="85" rx="8" fill="url(#cardGrad)" stroke="#10b981" stroke-width="1.5" />
+    <text x="70" y="410" fill="#34d399" font-family="-apple-system, sans-serif" font-size="14" font-weight="bold">DECONFLICTION &amp; ANTENNA DYNAMICS ENGINE (§4)</text>
+    <text x="70" y="435" fill="#cbd5e1" font-family="-apple-system, sans-serif" font-size="12">
+      • Aperture Overlap Detection: Flags simultaneous double-bookings across same physical dish
+    </text>
+    <text x="70" y="455" fill="#94a3b8" font-family="-apple-system, sans-serif" font-size="11">
+      • Mechanical Slew Buffer: Enforces mandatory 15-minute azimuth/elevation repositioning &amp; modem retuning margin
+    </text>
+  </g>
+
+  <!-- Arrows -->
+  <g stroke="#10b981" stroke-width="2" stroke-dasharray="4,4" fill="none">
+    <line x1="500" y1="465" x2="500" y2="505" />
+  </g>
+
+  <!-- Bottom: Physical Ground Station Apertures -->
+  <g filter="url(#shadow)">
+    <rect x="50" y="505" width="900" height="65" rx="8" fill="url(#cardGrad)" stroke="#c084fc" stroke-width="1.5" />
+    <text x="70" y="532" fill="#c084fc" font-family="-apple-system, sans-serif" font-size="14" font-weight="bold">PHYSICAL GROUND STATION APERTURES (PROVIDER CSSS)</text>
+    <text x="70" y="553" fill="#cbd5e1" font-family="-apple-system, sans-serif" font-size="12">
+      NASA DSN (Goldstone, Canberra, Madrid) • ESA ESTRACK (Cebreros, New Norcia, Malargüe) • Commercial (KSAT, Viasat)
+    </text>
+  </g>
+</svg>
